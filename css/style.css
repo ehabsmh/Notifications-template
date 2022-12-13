@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "jakarta-bold";
+  src: url("/assets/fonts/static/PlusJakartaSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "jakarta-medium";
+  src: url("/assets/fonts/static/PlusJakartaSans-Medium.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+body ul {
+  list-style-type: none;
+}
+body a {
+  text-decoration: none;
+}
+
+main {
+  height: 100vh;
+  background-color: hsl(210deg, 60%, 98%);
+  padding-top: 70px;
+}
+main .container {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 50% !important;
+}
+main .container .notifications {
+  padding: 25px 0;
+}
+main .container .notifications h3 {
+  color: hsl(224deg, 21%, 14%);
+  font-size: 1.6rem;
+}
+main .container .notifications h3 .notifications__count {
+  background-color: hsl(219deg, 85%, 26%);
+  color: hsl(210deg, 60%, 98%);
+  padding: 3px 13px;
+  border-radius: 8px;
+}
+main .container .notifications .mark_all_as_read {
+  color: hsl(219deg, 12%, 42%);
+  word-spacing: -2px;
+  cursor: pointer;
+}
+main .container .notification {
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 15px 0;
+  margin-top: 15px;
+  background-color: hsl(210deg, 60%, 98%);
+}
+main .container .notification .notification_content {
+  padding: 0 20px;
+}
+main .container .notification .notification_content img {
+  width: 80px;
+}
+main .container .notification .notification_content .acc_name {
+  color: hsl(224deg, 21%, 14%);
+  font-family: "jakarta-bold";
+}
+main .container .notification .notification_content .event {
+  color: hsl(219deg, 12%, 42%);
+}
+main .container .notification .notification_content .action {
+  color: hsl(219deg, 14%, 63%);
+}
+main .container .notification .notification_content .acc_group {
+  color: red;
+}
+main .container .notification.new {
+  background-color: hsl(211deg, 68%, 94%);
+}
+main .container .notification.new .new-event {
+  position: relative;
+}
+main .container .notification.new .new-event::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: hsl(1deg, 90%, 64%);
+  right: -20px;
+  bottom: 0;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 0px;
+    background-color: hsl(0deg, 0%, 100%);
+  }
+  main .container {
+    width: 100% !important;
+  }
+  main .container .notification {
+    background-color: hsl(210deg, 60%, 98%);
+  }
+  main .container .notification .notification_content p span {
+    color: hsl(224deg, 21%, 14%);
+    font-family: "jakarta-bold";
+  }
+}/*# sourceMappingURL=style.css.map */

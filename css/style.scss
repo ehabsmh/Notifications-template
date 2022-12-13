@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "jakarta-bold";
+  src: url("/assets/fonts/static/PlusJakartaSans-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "jakarta-medium";
+  src: url("/assets/fonts/static/PlusJakartaSans-Medium.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  ul {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+// Primary Colors
+$red: hsl(1, 90%, 64%);
+$blue: hsl(219, 85%, 26%);
+
+// Neutral
+$white: hsl(0, 0%, 100%);
+$veryLightGrayishBlue: hsl(210, 60%, 98%); // already read notification
+$lightGrayishBlue1: hsl(211, 68%, 94%); // new notification
+$lightGrayishBlue2: hsl(205, 33%, 90%);
+$grayishBlue: hsl(219, 14%, 63%);
+$darkGrayishBlue: hsl(219, 12%, 42%);
+$veryDarkBlue: hsl(224, 21%, 14%);
+
+main {
+  height: 100vh;
+  background-color: $veryLightGrayishBlue;
+  padding-top: 70px;
+  .container {
+    background-color: $white;
+    width: 50% !important;
+    .notifications {
+      padding: 25px 0;
+      h3 {
+        color: $veryDarkBlue;
+        font-size: 1.6rem;
+        .notifications__count {
+          background-color: $blue;
+          color: $veryLightGrayishBlue;
+          padding: 3px 13px;
+          border-radius: 8px;
+        }
+      }
+      .mark_all_as_read {
+        color: $darkGrayishBlue;
+        word-spacing: -2px;
+        cursor: pointer;
+      }
+    }
+    .notification {
+      transition: all 0.5s;
+      cursor: pointer;
+      padding: 15px 0;
+      margin-top: 15px;
+      background-color: $veryLightGrayishBlue;
+      .notification_content {
+        padding: 0 20px;
+        img {
+          width: 80px;
+        }
+        .acc_name {
+          color: $veryDarkBlue;
+          font-family: "jakarta-bold";
+        }
+        .event {
+          color: $darkGrayishBlue;
+        }
+
+        .action {
+          color: $grayishBlue;
+        }
+        .acc_group {
+          color: red;
+        }
+      }
+    }
+    .notification.new {
+      background-color: $lightGrayishBlue1;
+      .new-event {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $red;
+          right: -20px;
+          bottom: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 0px;
+    background-color: $white;
+    .container {
+      width: 100% !important;
+
+      .notification {
+        // padding: 15px 0;
+        background-color: $veryLightGrayishBlue;
+        .notification_content {
+          // padding: 20px;
+          p {
+            span {
+              color: $veryDarkBlue;
+              font-family: "jakarta-bold";
+            }
+          }
+        }
+      }
+    }
+  }
+}
